@@ -1,6 +1,7 @@
 import pandas as pd
 from matplotlib.pylab import *
 import streamlit as st
+import lxml
 import os
 html ='data/gas.html'
 gasprice = 'data/NaturalGasFuturesHistoricalData.csv'
