@@ -29,5 +29,6 @@ ax = gas.tail(30).plot(x='Release Date',
 gas.tail(29).plot(x='Release Date', y=['Price'], secondary_y=True, ax=ax)
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, fontsize=10)
-plt.show()
+st.write('EIA Natural Gas Storage and Natural Gas Future Price')
+st.pyplot(plt)
 #print(gas.tail(50))
