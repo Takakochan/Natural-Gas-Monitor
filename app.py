@@ -3,12 +3,10 @@ from matplotlib.pylab import *
 import os
 
 html = os.path.join('data', 'gas.html')
-output_csv = os.path.join('data', 'ngas.csv')
 gasprice = os.path.join('data', 'NaturalGas FuturesHistoricalData.csv')
 
 tables = pd.read_html(html)
 df = tables[0]
-tables[0].to_csv(output_csv, index=False)
 gas = tables[0]
 gas = gas.drop('Unnamed: 5', axis=1)
 gas = gas.dropna()
