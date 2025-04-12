@@ -21,7 +21,6 @@ price = price.sort_index(ascending=False)
 df2 = price['Price'].tail(50)
 df1 = gas.tail(50)
 gas = pd.concat([df1, df2], axis=1)
-print(gas)
 
 fig = plt.figure()
 ax = gas.tail(30).plot(x='Release Date',
@@ -31,4 +30,4 @@ gas.tail(29).plot(x='Release Date', y=['Price'], secondary_y=True, ax=ax)
 labels = ax.get_xticklabels()
 plt.setp(labels, rotation=45, fontsize=10)
 plt.show()
-print(gas.tail(50))
+#print(gas.tail(50))
