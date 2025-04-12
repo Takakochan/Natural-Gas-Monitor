@@ -1,5 +1,6 @@
 import pandas as pd
 from matplotlib.pylab import *
+import streamlit as st
 import os
 
 html = os.path.join('data', 'gas.html')
