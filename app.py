@@ -4,12 +4,11 @@ import os
 
 html = os.path.join('data', 'gas.html')
 output_csv = os.path.join('data', 'ngas.csv')
+gasprice = os.path.join('data', 'NaturalGas FuturesHistoricalData.csv')
 
 tables = pd.read_html(html)
-
-
 df = tables[0]
-tables[0].to_csv('/Users/takako/Desktop/ngas.csv', index=False)
+tables[0].to_csv(output_csv, index=False)
 gas = tables[0]
 gas = gas.drop('Unnamed: 5', axis=1)
 gas = gas.dropna()
@@ -19,7 +18,7 @@ gas['Forecast'] = gas['Forecast'].str.extract(r'(-?\d+)').astype(int)
 gas = gas.reset_index()
 gas = gas.sort_index(ascending=False)
 
-price = pd.read_csv(output_csv)
+price = pd.read_csv(gasprice)
 price = price.sort_index(ascending=False)
 df2 = price['Price'].tail(50)
 df1 = gas.tail(50)
