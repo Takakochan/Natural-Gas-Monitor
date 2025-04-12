@@ -1,5 +1,5 @@
 import pandas as pd
-from matplotlib.pylab import *
+import matplotlib
 import streamlit as st
 import os
 
